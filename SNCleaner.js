@@ -12,7 +12,7 @@ setInterval(function () {
         + '&wall_page=0&filter=&filter_author=0&ajax=1&store=0&ajax_target=wall',
         {
             "wall_post_id": Tuenti.Core.DOM.getByPartialId("wall_post_").current().getId().substring(Tuenti.Core.DOM.getByPartialId("wall_post_").current().getId().lastIndexOf("_") + 1),
-            "csfr": csfr, "type": 0
+            "csfr": csrf, "type": 0
         },
         { "message": ".", "acceptButton": "Delete", "skipConfirmation": true, "itemKey": null });
 }, 2500);
