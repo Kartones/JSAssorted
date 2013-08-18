@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Sandbox.js"></script>
+    <script src="Core.js"></script>
+    <script src="Modules/ErrorManager.js"></script>
+    <script src="Modules/samplemodule.js"></script>
+    <script src="Modules/samplemodule2.js"></script>
+</head>
+<body>
+    Use the console to see logs and inspect the sources.
+    <script type="text/javascript">
+        var core = new Core();
+
+        core.register(ErrorManager.moduleName, ErrorManager)
+            .start(ErrorManager.moduleName)
+            .register(SampleModule.moduleName, SampleModule)
+            .register(SampleModule2.moduleName, SampleModule2)
+            .start(SampleModule.moduleName);
+
+        // This will fail due to missing 'text' in the config
+        core.configure(SampleModule2.moduleName, {
+            messageChannel: SampleModule.moduleName
+        })
+            .start(SampleModule2.moduleName)
+            .messageBroker.publish(SampleModule2.writeSomethingFromOtherModule, {});
+
+        // Now we fix it
+        core.configure(SampleModule2.moduleName, {
+            text : "Message from a configured SampleModule2, sent via SampleModule",
+            messageChannel: SampleModule.writeSomethingMessage
+        })
+            .start(SampleModule2.moduleName)
+            .messageBroker.publish(SampleModule2.writeSomethingFromOtherModule, {});
+
+        core.messageBroker.publish(SampleModule.writeSomethingMessage, { text: "Global message broadcast" });
+
+        core.stop(SampleModule2.moduleName)
+            .stop(SampleModule.moduleName);
+
+        core.messageBroker.publish(SampleModule.writeSomethingMessage, { text: "Message that nobody will receive" });
+    </script>
+</body>
+</html>
