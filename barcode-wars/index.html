@@ -1,0 +1,210 @@
+<html>  
+  <head>
+    <meta charset="utf8"/>
+    <title>Barcode Wars</title>
+    <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+        .hide 
+        {
+            visibility:hidden;
+        }
+        .clear
+        {
+            clear:both;
+        }
+        .centered
+        {
+            text-align: center;
+        }
+        body
+        {
+            background-color: #161616;
+            color: #6AAEE2;
+            font-family: 'Press Start 2P';
+            font-size: 10px;
+        }
+        a
+        {
+            color: #91C7F1;
+        }
+        a:hover
+        {
+            color: #AAD2F1;
+        }
+        h1
+        {
+            font-size: 28px;
+            text-align: center;
+        }
+        h3
+        {
+            font-size: 18px;
+            text-align: center;
+            margin: 12px;
+        }
+        span
+        {
+            padding: 2px;
+        }
+        #main
+        {
+            background-color: #212121;
+            border: 1px solid black;
+            margin: 9px;
+            padding: 9px;
+            width: 500px;
+        }
+        #footer
+        {
+            font-size: 6px;
+            text-align: center;
+        }
+        .playerAvatar
+        {
+            height:1;
+            margin-left: 12px;
+            width:1;
+        }
+        .playerCardHidden
+        {
+            visibility:hidden;
+        }
+        .playerCard
+        {
+            border: 1px solid #6AAEE2;
+            float: left;
+            height: 220px;
+            margin: 3px;
+            padding: 3px;
+            width: 150px;
+        }
+        .actions
+        {
+            border: 1px solid #6AAEE2;
+            float: left;
+            height: 220px;
+            margin: 3px;
+            padding: 3px;
+            width: 150px;
+        }
+        .hide
+        {
+            visibility: hidden;
+        }
+        .action
+        {
+            border: 1px solid #6AAEE2;
+            width: 142px;
+            height: 22px;
+            margin-left: 3px;
+            margin-right: 3px;
+            margin-bottom: 20px;
+            padding-top: 9px;
+        }
+        .playerCardStats
+        {
+            margin-top: 6px;
+        }
+        .killed
+        {
+            color: #FF0000;
+        }
+        #log
+        {
+            border: 1px solid #6AAEE2;
+            margin: 3px;
+            padding: 3px;
+            height: 16px;
+            width: 478px;
+        }
+        .logLine
+        {
+            font-size: 6px;
+            padding: 3px;
+        }
+        </style>
+
+  </head>
+  <body>
+
+    <div id="main">
+
+        <h1>Barcode Wars</h1>
+
+        <div class="clear"></div>
+
+        <div id="uploadArea" class="centered">
+            <input type="file" id="fileElem" accept="image/*" style="display:none" onchange="Game.Engine.ProcessBarcode(this.files)">
+            <a href="#" id="fileSelect">Select image</a> (<a href="http://www.barcode-generator.org/" target="_blank">Online barcode generator</a>,use UPC-A)
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="centered">
+            <div id="Player1Area" class="playerCardHidden">
+                <h3>Player</h3>
+                <div id="Player1Avatar" class="playerAvatar">
+                    <canvas id="Player1Canvas" style="width:100%;height:100%"></canvas>
+                </div>
+                <div class="playerCardStats">
+                    <span>Strength:</span><span id="Player1Str">0</span><br />
+                    <span>Defense:</span><span id="Player1Def">0</span><br />
+                    <span>Vitality:</span><span id="Player1Vit">0</span><br />
+                </div>
+            </div>
+
+            <div id="ActionsArea" class="actions hide">
+                <p class="action">
+                    <a id="attackAction" href="#"><span>Attack</span></a>
+                </p>
+                <p class="action">
+                    <a id="superAttackAction" href="#"><span>Super Attack</span></a>
+                </p>
+                <p class="action">
+                    <a id="healAction" href="#"><span>Heal</span></a>
+                </p>
+            </div>
+
+            <div id="Player2Area" class="playerCardHidden">
+                <h3>Monster</h3>
+                <div id="Player2Avatar" class="playerAvatar">
+                    <canvas id="Player2Canvas" style="width:100%;height:100%"></canvas>
+                </div>
+                <div class="playerCardStats">
+                    <span>Strength:</span><span id="Player2Str">0</span><br />
+                    <span>Defense:</span><span id="Player2Def">0</span><br />
+                    <span>Vitality:</span><span id="Player2Vit">0</span><br />
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+        <div id="log">
+            <span data-id="1" class="logLine"></span><br />
+            <span data-id="2" class="logLine lastLog"></span>
+        </div>
+
+        <div id="footer">
+            By <a target="_blank" href="http://kartones.net/blogs/kartones/">Kartones</a> . <a target="_blank" 
+                href="https://gist.github.com/421369">Barcode reader:Tobias Schneider</a> . <a target="_blank" 
+                href="http://www.webtoolkit.info/demo/javascript-md5">MD5 encoder:WebToolKit</a>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+
+    <div id="debugPanel" class="hide">
+        Barcode: <span id="barcodeValue" style="background-color:Black; color:White">&nbsp;</span><br />
+        Hash: <span id="md5Value" style="background-color:Black; color:White">&nbsp;</span><br />
+    </div>
+
+
+    <script type="text/javascript" src="bundle.js"></script>
+    <script type="text/javascript">
+        // TODO: window.onload etc.
+        Game.Engine.Init();
+    </script>
+
+  </body>
+</html>
