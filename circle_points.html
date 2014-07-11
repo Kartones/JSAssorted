@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+    <p>
+    <ul>
+    <li>BLACK: equiDistantPoints</li>
+    <li><span style="color:#788E76">GREEN</span>: equiDistantRandomPoints</li>
+    <li><span style="color:#FF2E23">RED</span>: randomPoints</li>
+    </ul>
+    </p>
+    <script>
+      var canvas = document.getElementById('myCanvas'),
+        context = canvas.getContext('2d'),
+        cX = canvas.width / 2.5,
+        cY = canvas.height / 2.5,
+        r = 150,
+        numPoints = 75,
+        pointsList;
+
+      var drawCircle = function(canvasContext, x, y, r, fillColor, strokeColor) {
+        context.beginPath();
+        context.arc(x, y, r, 0, 2 * Math.PI, false);
+        context.fillStyle = fillColor;
+        context.fill();
+        context.lineWidth = 1;
+        context.strokeStyle = strokeColor;
+        context.stroke();
+        context.closePath();
+      }
+
+      var randomNumber = function(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      // Equi-distant between them, all same distance from center
+      var equiDistantPoints = function(r, howMany) {
+        var list = [],
+            angle;
+        for (var i = 0; i < howMany; i++) {
+          angle = 2 * Math.PI * i / howMany;
+          list.push([ r * Math.cos(angle), r * Math.sin(angle) ]);
+        }
+        return list;
+      };
+
+      // Equi-distant betwen them, random distance from center
+      var equiDistantRandomPoints = function(r, howMany) {
+        var list = [],
+            angle,
+            distance;
+        for (var i = 0; i < howMany; i++) {
+          angle = 2 * Math.PI * i / howMany;
+          distance = randomNumber(1, r);
+          list.push([ distance * Math.cos(angle), distance * Math.sin(angle) ]);
+        }
+        return list;
+      };
+
+      // Fully random, both in separation and distance from center
+      var randomPoints = function(r, howMany) {
+        var list = [],
+            angle,
+            distance;
+        for (var i = 0; i < howMany; i++) {
+          angle = 2 * Math.PI * randomNumber(0, howMany);
+          distance = randomNumber(1, r);
+          list.push([ distance * Math.cos(angle), distance * Math.sin(angle) ]);
+        }
+        return list;
+      };
+
+      drawCircle(context, cX, cY, r, '#BFDAFF', '#A3CAFF');
+
+      pointsList = equiDistantPoints(r, numPoints);
+      for (var i = 0, size = pointsList.length; i < size; i++) {
+        drawCircle(context, cX + pointsList[i][0], cY + pointsList[i][1], 2, '#444444', '#000000')
+      }
+
+      pointsList = equiDistantRandomPoints(r, numPoints);
+      for (var i = 0, size = pointsList.length; i < size; i++) {
+        drawCircle(context, cX + pointsList[i][0], cY + pointsList[i][1], 2, '#9EBC9C', '#788E76')
+      }
+
+      pointsList = randomPoints(r, numPoints);
+      for (var i = 0, size = pointsList.length; i < size; i++) {
+        drawCircle(context, cX + pointsList[i][0], cY + pointsList[i][1], 2, '#FF7566', '#FF2E23')
+      }
+    </script>
+  </body>
+</html>
