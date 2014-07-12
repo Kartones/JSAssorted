@@ -1,0 +1,50 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>The Plague</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+
+<div>
+    <div id="boardContainer"></div>
+    <div id="turnContainer"></div>
+    <div id="statusContainer">
+    <p>
+        <h1>The Plage</h1>
+    </p>
+    <p>
+        You are a plague and have to infect all cells before you die in 25 turns.</p>
+    <p>
+        You start on the upper-left corner, and will infect all cells from the same type that you choose,
+        near the already infected ones.
+    </p>
+    <p>
+        Choose a difficulty level to begin.
+    </p>
+    </div>
+    <div id="buttonsContainer">
+        <input type="button" id="startEasyButton" value="Start EASY" />
+        <input type="button" id="startMediumButton" value="Start MEDIUM" />
+        <input type="button" id="startHardButton" value="Start HARD" />
+    </div>
+
+    <div class="footer">
+        Game mechanics copied from <a href="https://itunes.apple.com/us/app/pixelation/id533636060">Pixelation</a>.
+    </div>
+</div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/seedrandom.js"></script>
+    <script type="text/javascript" src="js/code.js"></script>
+    <script type="text/javascript">
+        var gameInstance;
+        jQuery(document).ready(function () {
+            gameInstance = new ThePlagueGame();
+            gameInstance.Init("boardContainer", "turnContainer", "startEasyButton", "startMediumButton",
+                              "startHardButton", "statusContainer");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿body {
+	font-size: 22px;
+	color: #454545;
+}
+
+.footer {
+	text-align: center;
+	font-size: 14px;
+	position: fixed;
+	bottom: 18px;
+}
+
+.board tr td
+{
+    width: 28px;
+    height: 28px;
+    border: 1px solid grey;
+    text-align: center;
+    cursor: pointer;
+}
+
+.type1 {
+	background-color: #9BA7CC;
+}
+
+.type2 {
+	background-color: #FFEE9E;
+}
+
+.type3 {
+	background-color: #FFBA8C;
+}
+
+.type4 {
+	background-color: #FF8E8E;
+}
+
+.type5 {
+	background-color: #DFBFFF;
+}
+
+.type6 {
+	background-color: #A8E4FF;
+}
+
+.owned {
+	background-color: #7ECC3B;
+}
