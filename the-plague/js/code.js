@@ -220,13 +220,13 @@ function GameEngine() {
     var AdvanceTurn = function () {
         var i,
             size,
-            wonGame;
+            wonGame = false;
 
         if (!playingGame) {
             return;
         }
 
-        if (currentTurn < self.MAXTURNS) {
+        if (currentTurn <= self.MAXTURNS) {
             currentTurn++;
             wonGame = true;
             for (i = 0, size = self.BOARD_WIDTH * self.BOARD_HEIGHT; i < size; i++) {
@@ -234,13 +234,15 @@ function GameEngine() {
             }
             if (wonGame) {
                 playingGame = false;
-                renderer.DrawWon(currentTurn);
+                renderer.DrawWon(currentTurn-1);
             } else {
                 for (i = 0, size = self.BOARD_WIDTH * self.BOARD_HEIGHT; i < size; i++) {
                     checkedBoard[i] = false;
                 }
             }
-        } else {
+        }
+
+        if (currentTurn > self.MAXTURNS && !wonGame) {
             playingGame = false;
             renderer.DrawLost();
         }
