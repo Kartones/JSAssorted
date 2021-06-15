@@ -5,6 +5,7 @@
  * TODOs:
  * - remove hardcoded coordinates, make then relative to width
  * - Pacman at minimum should be in a class
+ * ' Improve AI: https://pacman.fandom.com/wiki/Maze_Ghost_AI_Behaviors
  *
  */
 

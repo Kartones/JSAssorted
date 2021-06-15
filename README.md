@@ -12,7 +12,7 @@ Usually, simply open `index.html` with a web browser
 
 ### Games-related
 
-* `\pac-man`:  A [Pac-Man](https://en.wikipedia.org/wiki/Pac-Man) clone, based on a tutorial but with a few graphics & AI improvements. Ghost AI is still dumb, but at least now they try to get out of the lair and don't enter back.
+* `\pac-man`:  A [Pac-Man](https://en.wikipedia.org/wiki/Pac-Man) clone, based on a tutorial but with a few graphics & AI improvements. Ghost AI is still dumb, but at least now they try to get out of the lair and don't enter back. Play it [here](https://kartones.net/demos/025/)
 
 ![Pac-Man](doc/pac-man.png)
 
