@@ -1,0 +1,85 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 560px;
+    height: 560px;
+    border: solid blue;
+    background-color: black;
+}
+
+.grid div {
+    width: 20px;
+    height: 20px;
+}
+
+.dot {
+    background-color: lightsalmon;
+    border: 8px solid black;
+    box-sizing: border-box;
+}
+
+.wall {
+    background-color: darkblue;
+}
+
+.ghost-lair {
+}
+
+.power-pellet {
+    background-color: lightsalmon;
+    border: 5px solid black;
+    box-sizing: border-box;
+}
+
+.pac-man {
+    background-image: url('../img/pac-man.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    border: 0;
+}
+
+.ghost {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    border: 0;
+}
+
+.scared {
+    background-image: url('../img/scared-ghost.png');
+}
+
+.blinky {
+    background-image: url('../img/blinky.png');
+}
+
+.pinky {
+    background-image: url('../img/pinky.png');
+}
+
+.inky {
+    background-image: url('../img/inky.png');
+}
+
+.clyde {
+    background-image: url('../img/clyde.png');
+}
+
+.right {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.up {
+    -webkit-transform:rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.down {
+    -webkit-transform:rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
