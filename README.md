@@ -12,15 +12,17 @@ Usually, simply open `index.html` with a web browser
 
 ### Games-related
 
-* `\pac-man`:  A [Pac-Man](https://en.wikipedia.org/wiki/Pac-Man) clone, based on a tutorial but with a few graphics & AI improvements. Ghost AI is still dumb, but at least now they try to get out of the lair and don't enter back. Play it [here](https://kartones.net/demos/025/)
+* `\pac-man`:  A [Pac-Man](https://en.wikipedia.org/wiki/Pac-Man) clone, based on a tutorial but with a few graphics & AI improvements. Ghost AI is still dumb, but at least now they try to get out of the lair and don't enter back. Play it [here](https://kartones.net/demos/025/).
 
 ![Pac-Man](doc/pac-man.png)
 
-* `\barcode-wars` : Barcode Wars is a tiny javascript game for Firefox or Chrome that allows to read a barcode and play a small turn-based battle with an enemy, both generated based on the barcode. More info can be found [here](https://blog.kartones.net/post/barcode-wars-small-javascript-game/)  and you can play the game [here](https://kartones.net/demos/017/)
+* `\barcode-wars` : Barcode Wars is a tiny javascript game for Firefox or Chrome that allows to read a barcode and play a small turn-based battle with an enemy, both generated based on the barcode. More info can be found [here](https://blog.kartones.net/post/barcode-wars-small-javascript-game/)  and you can play the game [here](https://kartones.net/demos/017/).
 
 ![Barcode wars](https://images.kartones.net/posts/kartonesblog/barcode_wars.webp)
 
-* `\the-plague` : Small Javascript & HTML5 game in which you are a plague that has to infect all cells before dying. Play it [here](https://kartones.net/demos/018/)
+* `\the-plague` : Small Javascript & HTML5 game in which you are a plague that has to infect all cells before dying. Play it [here](https://kartones.net/demos/018/).
+
+![The plague](doc/the_plague.png)
 
 ### Miscellaneous
 

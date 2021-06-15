@@ -53,9 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
         1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
       ];
     const squares = [];
+    // below ghosts lair
+    const pacmanStartIndex = 490;
 
-    // starting position (below ghosts lair)
-    let pacmanIndex = 490;
+
+    let pacmanIndex = pacmanStartIndex;
     let score = 0;
 
 
@@ -153,6 +155,9 @@ document.addEventListener('DOMContentLoaded', () => {
             score++;
             scoreDisplay.innerHTML = score;
             squares[pacmanIndex].classList.remove('dot');
+
+            // check for "win" condition
+            boardEmptyOfDots();
         }
     }
 
@@ -163,6 +168,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 ghost.makeScared();
             });
             squares[pacmanIndex].classList.remove('power-pellet');
+        }
+    }
+
+    function boardEmptyOfDots() {
+        if (squares.filter(square => square.classList.contains('dot')).length === 0) {
+            ghosts.forEach(ghost => ghost.stop());
+            document.removeEventListener('keyup', movePacMan);
+
+            scoreDisplay.innerHTML = `${score} .:. You won!`;
         }
     }
 
@@ -284,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         stop() {
-            clearInterval(this.timerId);;
+            clearInterval(this.timerId);
         }
     }
 
