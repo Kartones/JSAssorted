@@ -26,6 +26,7 @@ Usually, simply open `index.html` with a web browser
 
 ### Miscellaneous
 
+* `\shopping-cart-with-discounts`: Javascript implementation (class & prototype versions) of [my Python implementation](https://github.com/Kartones/python/tree/master/shopping-cart-with-discounts) of a small shopping cart with an extensible discounts system.
 * `\pubsub-modules` : Micro-framework built to prepare a small module-based architecture for Javascript, using pub-sub pattern. Includes two sample modules to test the FW capabilities. Just the very basic functionality, nothing advanced.
 * `circle_points.html` : Small sample to remember how to distribute points inside a circumference.
 * `NoCSS.js` : Small snippet I built to clear pages from CSS styles, Javascript, Blogger iframes and similar stuff and focus on reading the content. Ready to use as a bookmarklet in Firefox/Chrome.

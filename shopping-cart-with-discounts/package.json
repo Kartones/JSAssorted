@@ -1,0 +1,10 @@
+{
+  "name": "shopping-cart-with-discounts",
+  "version": "0.0.1",
+  "main": "checkout.test.js",
+  "author": "Kartones",
+  "license": "Unlicense",
+  "private": true,
+  "dependencies": {},
+  "type": "module"
+}
