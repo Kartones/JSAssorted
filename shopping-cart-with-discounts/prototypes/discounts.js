@@ -1,3 +1,7 @@
+/*
+  Based on the Chain-of-responsibility pattern: https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern
+*/
+
 export const Discounts = (function () {
   function Constructor(discounts = [], availableProducts = {}) {
     this.discounts = discounts;
