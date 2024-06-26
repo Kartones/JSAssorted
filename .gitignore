@@ -161,3 +161,9 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+
+# custom
+rle/**/new_*.png
+rle/**/pnpm-lock.yaml
+
+**/node_modules/

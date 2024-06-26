@@ -12,6 +12,11 @@ Usually, simply open `index.html` with a web browser
 
 ### Games-related
 
+* `\rle`: A Run-Length Encoding implementation, using PNGs as sources, and reconstructing back a new png from the `RLE-decode(RLE-encode(original-image))`.
+
+![RLE screenshot](doc/rle_screenshot.png)
+
+
 * `\pac-man`:  A [Pac-Man](https://en.wikipedia.org/wiki/Pac-Man) clone, based on a tutorial but with a few graphics & AI improvements. Ghost AI is still dumb, but at least now they try to get out of the lair and don't enter back. Play it [here](https://kartones.net/demos/025/).
 
 ![Pac-Man](doc/pac-man.png)

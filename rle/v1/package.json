@@ -1,0 +1,12 @@
+{
+  "name": "rle",
+  "version": "0.0.1",
+  "main": "main.mjs",
+  "author": "Kartones",
+  "license": "Unlicense",
+  "private": true,
+  "dependencies": {
+    "pngjs": "^7.0.0"
+  },
+  "type": "module"
+}
