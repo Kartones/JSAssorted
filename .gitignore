@@ -164,6 +164,8 @@ pip-log.txt
 
 # custom
 rle/**/new_*.png
+rle/**/combined_*.png
+rle/**/optimal_*.png
 rle/**/pnpm-lock.yaml
 
 **/node_modules/

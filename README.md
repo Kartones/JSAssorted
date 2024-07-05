@@ -12,7 +12,7 @@ Usually, simply open `index.html` with a web browser
 
 ### Games-related
 
-* `\rle`: A Run-Length Encoding implementation, using PNGs as sources, and reconstructing back a new png from the `RLE-decode(RLE-encode(original-image))`.
+* `\rle`: A Run-Length Encoding implementation, using PNGs as sources, and reconstructing back a new png from the `RLE-decode(RLE-encode(original-image))`. `v1` works with full images. `v2` chunks the sprites into tiles and attempts (randomly)reordering them to check if compresses better or worse.
 
 ![RLE screenshot](doc/rle_screenshot.png)
 
